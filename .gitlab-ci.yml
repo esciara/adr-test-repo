@@ -11,6 +11,9 @@ stages:
 semantic_release:
   stage: release
   image: node:12-buster
+  only:
+    refs:
+      - master
   before_script:
     - update-alternatives --install /usr/bin/python python /usr/bin/python3 1
     - curl -sSL  https://bootstrap.pypa.io/get-pip.py | python
