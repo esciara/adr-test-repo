@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "adr-viewer --adr-path docs/adr/"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "docs/index.html"
+        ]
+      }
+    ]
+  ]
+}
